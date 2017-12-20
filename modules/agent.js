@@ -21,10 +21,9 @@ let agentSchema = new mongoose.Schema({
 }, {'timestamps': {'createdAt': 'created_at', 'updatedAt': 'updated_at'}});
 
 
-
 agentSchema.statics.findByPositionName = (stationname, callback) => {
 
-    agentModel.find({stationname: {"$in": stationname}}, {
+    agentModel.find({stationname: {$in: stationname}}, {
         _id: 0,
         receiverate: 1,
         publishrate: 1,

@@ -45,8 +45,8 @@ exports.getOrderform = (req, res) => {
                 if (!req.query['adStatus']) {
                     return res.status(406).json({success: false, message: 'adStatus can not be empty'});
                 }
-                stationname = req.query['adStatus'];
-                command['adStatus'] = {$eq: stationname};
+                let adStatusArray = req.query['adStatus'];
+                command['adStatus'] = {$in: adStatusArray};
             }
 
             if (req.query['publishStationName']) {
@@ -73,6 +73,7 @@ exports.getOrderform = (req, res) => {
                     $gt: new Date(req.body['beginAfterDate'])
                 };
             }
+
             if (Object.keys(req.query).length === 0) {
                 return res.status(403).json({success: false, message: 'No search condition!'});
             }
@@ -89,17 +90,18 @@ exports.getOrderform = (req, res) => {
             return res.status(406).json({success: false, message: 'Need correct param send'});
     }
 
-    let sorter = {};
-
-    if (!sorter[req.query['order']]) {
-        sorter = null;
-    } else if (req.query['order']) {
-        sorter[req.query['sortBy']] = req.query['order'];
-    } else {
-        sorter[req.query['sortBy']] = 1;
+    let oprator = {};
+    if (req.query['order'] && req.query['sortBy']) {
+        oprator.sort = {};
+        oprator.sort[req.query['sortBy']] = parseInt(req.query['order']);
     }
 
-    orderModel.find(command, {__v: 0}, {sort: sorter}, (err, data) => {
+    if (req.query['page'] && req.query['unit']) {
+        oprator.skip = req.query['page'] * req.query['unit'];
+        oprator.limit = parseInt(req.query['unit']);
+    }
+
+    orderModel.find(command, {__v: 0}, oprator, (err, data) => {
             if (err) {
                 logger.info(req.body);
                 logger.error('Error location : Class: orderformController, function: getOrderForm. ' + err);
@@ -186,6 +188,8 @@ exports.addOrderForm = addOrderForm = (req, res) => {
     let orderForm = new orderModel();
     if (publishPositionsStringArray.includes(orderInformation.receivePosition.stationname)) {
         includeFlag = true;
+    } else {
+        publishPositionsStringArray.push(orderInformation.receivePosition.stationname);
     }
 
     {

@@ -1,0 +1,630 @@
+{
+  "front-version": "2.13.1",
+  "version": 3,
+  "nodes": [
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n   \"adName\":\"Hello\",\n   \"adType\":\"AD\",\n   \"adStatus\":\"Pending\",\n   \"adBeginDate\":\"2017-10-19\",\n   \"adEndDate\":\"2017-10-29\",\n   \"publishType\":\"Monthy\",\n   \"orderTotalAmont\":30140,\n   \"customerName\":\"王致和\",\n   \"paymentMethod\":\"Alipay\",\n   \"receivePosition\":{\n      \"stationname\":\"S1\",\n      \"currency\":\"Dol\"\n   },\n   \"publishPositions\":[\n      {\n         \"stationname\":\"S1\",\n         \"amount\":300,\n         \"currency\":\"Dol\"\n      },\n      {\n         \"stationname\":\"S2\",\n         \"amount\":200,\n         \"currency\":\"Dol\"\n      }\n   ],\n   \"customerWechat\":\"ADC\",\n   \"customerPhone\":\"415-478-1234\",\n   \"remark\":null,\n   \"adContinue\":false\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/addorderform"
+      },
+      "id": "a33736c4-eb89-4f76-b787-f9a02d108dd0",
+      "lastModified": "2017-12-16T13:11:23.099-08:00",
+      "name": "/orderform/addorderform",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+        "name": "DELETE"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"checkOrderId\":\"5a35854a1902021a047cef6b\",\n  \"paymentId\":\"5a35856d1902021a047cef6e\",\n  \"payDay\":\"2017-12-01T04:58:17.456Z\",\n  \"paymentAmount\":800\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "paymentId",
+              "value": "5a35856d1902021a047cef6e"
+            },
+            {
+              "enabled": true,
+              "name": "checkOrderId",
+              "value": "5a35854a1902021a047cef6b"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/checkOrder/deletecheckorder"
+      },
+      "id": "0b562be9-7e61-4f04-a42d-5ecd31188cbb",
+      "lastModified": "2017-12-17T23:45:58.041-08:00",
+      "name": "/orderform/checkOrder/delete",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"checkOrderId\":\"5a35854a1902021a047cef6b\",\n  \"payDay\":\"2017-12-01T04:58:17.456Z\",\n  \"paymentAmount\":80\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/checkOrder/paycheckOrder"
+      },
+      "id": "bc04ce18-7bec-4991-b98a-c82249fc8d91",
+      "lastModified": "2017-12-16T12:43:22.894-08:00",
+      "name": "/orderform/checkOrder/paycheckOrder",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"checkOrderId\":\"5a35854a1902021a047cef6b\",\n  \"paymentId\":\"5a35856d1902021a047cef6e\",\n  \"payDay\":\"2017-12-01T04:58:17.456Z\",\n  \"paymentAmount\":800\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/checkOrder/updatecheckorder"
+      },
+      "id": "c9833c4d-af1c-4e7d-96d5-05f495c9fb5d",
+      "lastModified": "2017-12-16T12:47:53.778-08:00",
+      "name": "/orderform/checkOrder/updatepayorder",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+        "name": "DELETE"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \"payDay\":\"2017-08-11 14:35:56.009\",\n  \"paymentAmount\":19,\n  \"paymentId\":\"5a1e8edb47e5122524c7315a\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "_id",
+              "value": "5a35843e1902021a047cef55"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/deleteorderform"
+      },
+      "id": "82892123-d356-4ae8-99f0-139a2c0a0dcb",
+      "lastModified": "2017-12-16T12:41:43.673-08:00",
+      "name": "/orderform/deleteorderform",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n   \"_orderformid\":\"5a27cdbed5865b1ae08ea7ac\",\n  \"rebuilt\":false,\n   \"adName\":\"第三魔法2\",\n   \"adType\":\"辣条2\",\n   \"adStatus\":\"三2\",\n   \"adBeginDate\":null,\n   \"adEndDate\":null,\n   \"publishType\":\"ALP2\",\n   \"orderTotalAmont\":160002,\n   \"customerName\":\"WANG2\",\n   \"paymentMethod\":\"pau2\",\n   \"receivePosition\":{\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n   \"publishPositions\":[\n      {\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S2\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S3\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      }\n   ],\n   \"customerWechat\":\"WAAA2\",\n   \"customerPhone\":\"108-8729-5552\",\n   \"remark\":\"HUANGYOU2\",\n   \"adContinue\":true\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "sortBy",
+              "value": "orderTotalAmont"
+            },
+            {
+              "enabled": true,
+              "name": "order",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "page",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "unit",
+              "value": "4"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/getorderform/all"
+      },
+      "id": "2bd2bd03-7a40-4e20-ac50-3b63f73aceba",
+      "lastModified": "2017-12-20T02:20:47.706-08:00",
+      "name": "/orderform/getorderform/:option",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n   \"_orderformid\":\"5a27cdbed5865b1ae08ea7ac\",\n  \"rebuilt\":false,\n   \"adName\":\"第三魔法2\",\n   \"adType\":\"辣条2\",\n   \"adStatus\":\"三2\",\n   \"adBeginDate\":null,\n   \"adEndDate\":null,\n   \"publishType\":\"ALP2\",\n   \"orderTotalAmont\":160002,\n   \"customerName\":\"WANG2\",\n   \"paymentMethod\":\"pau2\",\n   \"receivePosition\":{\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n   \"publishPositions\":[\n      {\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S2\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S3\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      }\n   ],\n   \"customerWechat\":\"WAAA2\",\n   \"customerPhone\":\"108-8729-5552\",\n   \"remark\":\"HUANGYOU2\",\n   \"adContinue\":true\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "adStatus[]",
+              "value": "Ongiong"
+            },
+            {
+              "enabled": true,
+              "name": "adStatus[]",
+              "value": "Pending"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/getorderform/search"
+      },
+      "id": "1532638f-39eb-4a4b-8854-fe6a1c3793e3",
+      "lastModified": "2017-12-18T12:56:25.434-08:00",
+      "name": "/orderform/getorderform/:option  for adstatusarray",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\"_orderformid\":\"5a35843e1902021a047cef55\",\n   \"rebuilt\":true,\n   \"adName\":\"Hello\",\n   \"adType\":\"AD\",\n   \"adStatus\":\"Pending\",\n   \"adBeginDate\":\"2017-10-19\",\n   \"adEndDate\":\"2017-10-29\",\n   \"publishType\":\"Monthy\",\n   \"orderTotalAmont\":37600,\n   \"customerName\":\"王致22和\",\n   \"paymentMethod\":\"Alipay\",\n   \"receivePosition\":{\n      \"stationname\":\"S1\",\n      \"currency\":\"Dol\"\n   },\n   \"publishPositions\":[\n      {\n         \"stationname\":\"S1\",\n         \"amount\":300,\n         \"currency\":\"Dol\"\n      },\n      {\n         \"stationname\":\"S2\",\n         \"amount\":200,\n         \"currency\":\"Dol\"\n      }\n   ],\n   \"customerWechat\":\"ADC\",\n   \"customerPhone\":\"415-478-1234\",\n   \"remark\":null,\n   \"adContinue\":false\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/orderform/updateorderform"
+      },
+      "id": "16e5c870-beb9-4743-8ccf-3366cb50eb50",
+      "lastModified": "2017-12-16T12:39:03.399-08:00",
+      "name": "/orderform/updateorderform",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "\n{\"username\": \"test1\",\n \"password\": \"123\",\n \"stationname\": \"S11\",\n \"receiverate\":0.6,\n \"publishrate\":0.7\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/user/addagent"
+      },
+      "id": "ad9c5036-5d49-4878-88ba-0de4455b0079",
+      "lastModified": "2017-12-16T12:52:49.427-08:00",
+      "name": "/user/addagent",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n   \"username\":\"abc2\",\n   \"password\":\"1234\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/user/mystations"
+      },
+      "id": "0982a0f8-9625-459a-9a16-93ccb7946db5",
+      "lastModified": "2017-12-16T12:28:34.517-08:00",
+      "name": "/user/mystations",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\"newpassword\": \"1234\"}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/user/updatepassword"
+      },
+      "id": "0b46ac31-55ba-4fdb-b2ad-5201d904d7e8",
+      "lastModified": "2017-12-16T12:52:59.877-08:00",
+      "name": "/user/updatepassword",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n   \"_orderformid\":\"5a27cdbed5865b1ae08ea7ac\",\n  \"rebuilt\":false,\n   \"adName\":\"第三魔法2\",\n   \"adType\":\"辣条2\",\n   \"adStatus\":\"三2\",\n   \"adBeginDate\":null,\n   \"adEndDate\":null,\n   \"publishType\":\"ALP2\",\n   \"orderTotalAmont\":160002,\n   \"customerName\":\"WANG2\",\n   \"paymentMethod\":\"pau2\",\n   \"receivePosition\":{\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n   \"publishPositions\":[\n      {\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S2\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S3\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      }\n   ],\n   \"customerWechat\":\"WAAA2\",\n   \"customerPhone\":\"108-8729-5552\",\n   \"remark\":\"HUANGYOU2\",\n   \"adContinue\":true\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/checkhealth"
+      },
+      "id": "ee4f0535-5967-4895-921d-4ec1d3e9b875",
+      "lastModified": "2017-12-12T03:02:28.312-08:00",
+      "name": "checkhealth",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n   \"username\":\"abc2\",\n   \"password\":\"1234\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/login"
+      },
+      "id": "b1cbdcfb-e859-4005-819a-11316f8cafc3",
+      "lastModified": "2017-12-16T12:27:52.964-08:00",
+      "name": "login",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    }
+  ]
+}
