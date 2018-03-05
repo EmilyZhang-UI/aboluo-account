@@ -1,5 +1,5 @@
 {
-  "front-version": "2.13.1",
+  "front-version": "2.13.2",
   "version": 3,
   "nodes": [
     {
@@ -418,6 +418,53 @@
         },
         "bodyType": "Text",
         "autoSetLength": true,
+        "textBody": "\n{\"username\": \"test4\",\n \"password\": \"123\",\n \"stationname\": \"管理员1\",\n \"receiverate\":0.6,\n \"publishrate\":0.7\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/user/addadmin"
+      },
+      "id": "b111d3e7-809d-4b18-8086-b9e13dd9f0c8",
+      "lastModified": "2017-12-30T18:12:20.736-08:00",
+      "name": "/user/addadmin",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
         "textBody": "\n{\"username\": \"test1\",\n \"password\": \"123\",\n \"stationname\": \"S11\",\n \"receiverate\":0.6,\n \"publishrate\":0.7\n}"
       },
       "headersType": "Form",
@@ -434,8 +481,55 @@
         "path": "/user/addagent"
       },
       "id": "ad9c5036-5d49-4878-88ba-0de4455b0079",
-      "lastModified": "2017-12-16T12:52:49.427-08:00",
+      "lastModified": "2017-12-30T18:11:33.563-08:00",
       "name": "/user/addagent",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "\n{\"username\": \"test3\",\n \"password\": \"123\",\n \"stationname\": \"管理3站\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/user/addsuperadmin"
+      },
+      "id": "d6671531-58fe-4587-bb3a-381a15a37d87",
+      "lastModified": "2017-12-30T18:07:09.749-08:00",
+      "name": "/user/addsuperadmin",
       "headers": [
         {
           "enabled": true,
@@ -552,6 +646,47 @@
         },
         "bodyType": "Text",
         "autoSetLength": true,
+        "textBody": "\n{\"username\": \"test4\",\n \"password\": \"123\",\n \"stationname\": \"管理员1\",\n \"receiverate\":0.6,\n \"publishrate\":0.7\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:3000",
+        "path": "/user/USA"
+      },
+      "id": "5678d685-06eb-4943-97ea-ce699cf5c751",
+      "lastModified": "2017-12-30T18:13:31.323-08:00",
+      "name": "/user/：country",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {}
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
         "textBody": "{\n   \"_orderformid\":\"5a27cdbed5865b1ae08ea7ac\",\n  \"rebuilt\":false,\n   \"adName\":\"第三魔法2\",\n   \"adType\":\"辣条2\",\n   \"adStatus\":\"三2\",\n   \"adBeginDate\":null,\n   \"adEndDate\":null,\n   \"publishType\":\"ALP2\",\n   \"orderTotalAmont\":160002,\n   \"customerName\":\"WANG2\",\n   \"paymentMethod\":\"pau2\",\n   \"receivePosition\":{\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n   \"publishPositions\":[\n      {\n         \"stationname\":\"S1\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S2\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      },\n      {\n         \"stationname\":\"S3\",\n         \"amount\":280,\n         \"currency\":\"DOl\"\n      }\n   ],\n   \"customerWechat\":\"WAAA2\",\n   \"customerPhone\":\"108-8729-5552\",\n   \"remark\":\"HUANGYOU2\",\n   \"adContinue\":true\n}"
       },
       "headersType": "Form",
@@ -594,7 +729,7 @@
         },
         "bodyType": "Text",
         "autoSetLength": true,
-        "textBody": "{\n   \"username\":\"abc2\",\n   \"password\":\"1234\"\n}"
+        "textBody": "{\n   \"username\":\"test3\",\n   \"password\":\"123\"\n}"
       },
       "headersType": "Form",
       "uri": {
@@ -610,7 +745,7 @@
         "path": "/login"
       },
       "id": "b1cbdcfb-e859-4005-819a-11316f8cafc3",
-      "lastModified": "2017-12-16T12:27:52.964-08:00",
+      "lastModified": "2017-12-30T18:13:40.456-08:00",
       "name": "login",
       "headers": [
         {
