@@ -1,6 +1,16 @@
 # ABL OrderForm submit system
 It can  add update and detele Orderform
 
+-1
+send a mail to recipients
+/sendemail 
+{
+  "recipients":["abx@gmail.com" ],
+  "subject":"报单提醒系统提醒",
+  "content":"消息内容"
+}
+
+
 0,GET
 /checkhealth
 check if server is running.
@@ -10,7 +20,7 @@ check if server is running.
 {"username": "abc1","password": "1234"}
 
 
-2,POST
+2.1,POST
 /user/addagent
  add A new agent to DB.
 
@@ -21,6 +31,23 @@ check if server is running.
  "publishrate":0.7
 }
 
+2.2,POST
+/user/addsuperadmin
+ add A new superadmin to DB.
+
+{"username": "test3",
+  "password": "123",
+  "stationname": "管理3站"
+}
+
+2.3,POST
+/user/addadmin
+ add A new addadmin to DB.
+
+{"username": "test3",
+  "password": "123",
+  "stationname": "管理3站"
+}
 3, POST
 /user/update
 {

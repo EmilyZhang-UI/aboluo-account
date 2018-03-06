@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const passport = require('./config/passport');
 const userController = require('./controllers/userController');
+const mailController = require('./controllers/mailController');
 const orderformController = require('./controllers/orderformController');
 const isAuthenticated = require('./controllers/authController').isAuthenticated;
 const loginUser = require('./controllers/authController');
@@ -13,6 +15,7 @@ const urlencoded_body_parser = bodyParser.urlencoded({extended: true});
 
 let app = express();
 
+app.options('*', cors());
 app.use(json_body_parser);
 app.use(urlencoded_body_parser);
 app.use(session({
@@ -21,6 +24,26 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Add headers
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
 
 // Configure the Basic strategy for use by Passport.
 //
@@ -46,8 +69,10 @@ app.get('/checkhealth', isAuthenticated('Agent'), function (req, res) {
         });
     }
 });
+app.post('/sendemail', isAuthenticated('Admin'), mailController.sendEmail);//done
 
 app.post('/user/addagent', isAuthenticated('Admin'), userController.addAgent);//done
+app.post('/user/addsuperadmin', userController.addSuperAdmin);//done
 app.post('/user/addadmin', isAuthenticated('Super_Admin'), userController.addAdmin);//done
 app.post('/user/updatepassword', isAuthenticated('Agent'), userController.updatepassword);//done
 
@@ -66,5 +91,6 @@ app.delete('/orderform/checkOrder/deletecheckorder', isAuthenticated('Admin'), o
 
 app.post('/login', loginUser.loginUser);
 app.post('/logout', loginUser.logoutUser);
+
 app.listen(3000);
 console.log("Begin Server");

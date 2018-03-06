@@ -100,21 +100,33 @@ exports.updatepassword = (req, res) => {
         return res.status(200).json({'succeed': true, 'massage': 'Please relogin'});
     })
 };
-//
-// exports.getLimitAgents = function (req, res) {
-//     let today = new Date();
-//     today.setMonth(today.getMonth() - 1);
-//
-//     agentModel.find().where('createtimestamp').lt(today).sort('createtimestamp').exec((err, agents) => {
-//         if (err) {
-//
-//             return res.status(404).json({'succeed': false, 'massage': 'Can not find anything'});
-//         }
-//
-//
-//         return res.status(200).json(agents);
-//
-//
-//     });
-//
-// };
+exports.addSuperAdmin = (req, res) => {
+
+    let result = require('crypto').createHash('md5').update(req.body.password + config.saltword).digest('hex');
+    let userInfo = {
+        username: req.body.username,
+        password: result,
+        country: 'All',
+        role: 'Super_Admin',
+        stationname: req.body.stationname,
+        receiverate: 1.0,
+        publishrate: 1.0
+    };
+    new agentModel(userInfo).save((err) => {
+        if (err) {
+            logger.info(req.body);
+            logger.error('Error location : Class: userController, function: addAgent. ' + err);
+            logger.error('Response code:503, message: Error Happened , please check input data');
+
+            if (err.toString().includes('duplicate')) {
+                return res.status(406).json({
+                    success: false,
+                    message: 'Duplication Username or StationName. The station name is :' + userInfo.stationname
+                });
+            } else {
+                return res.status(409).json({success: false, message: 'Error happen when adding to DB'});
+            }
+        }
+        return res.status(200).json(userInfo);
+    });
+};
