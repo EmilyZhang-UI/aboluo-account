@@ -62,7 +62,7 @@ $().ready(function(){
     $('.signForm').show();
     $('.signedForm').hide();
   }
-
+  console.log('test')
 });
 
 function setCookie(cname, cvalue, exdays) {
