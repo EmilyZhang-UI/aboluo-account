@@ -2,6 +2,7 @@ $().ready(function(){
   $( "#registerForm" ).submit(function(event) {
     event.preventDefault();
     var data = $(this).serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a; }, {});
+	// var urlshit = buildURL
     $.ajax({
       url: 'http://localhost:3000/user/addsuperadmin',
       type: 'post',
